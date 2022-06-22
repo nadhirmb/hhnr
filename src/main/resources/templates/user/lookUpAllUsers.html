@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<a th:href="@{http://localhost:8080/register}">
+    Create new User
+</a>
+<ul class="" th:each="user : ${users}">
+    <li id="" >
+
+            <span th:text="${user.username}"></span>
+            <span th:text="${user.name}"></span><br>
+            <span th:text="${user.role}"></span><br>
+        <div th:if="${user.asset == false}">
+            <a  th:href="@{http://localhost:8080/activate/{id} (id=${user.id})}">
+                Activiate
+            </a>
+        </div>
+        <div th:if="${user.asset == true}">
+            <a  th:href="@{http://localhost:8080/disactivate/{id} (id=${user.id})}">
+                Disctiviate
+            </a>
+        </div>
+    </li>
+</ul>
+</body>
+</html>

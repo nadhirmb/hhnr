@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  th:action="@{/login}"  method="POST"
+      >
+        <ul >
+            <li >
+
+            </li>
+            <li>
+                <label >Username</label>
+                <input type="text" name="username"
+                       required>
+            </li>
+            <li>
+                <di th:if="${param.error}}">Username or Password is incorrect</di>
+                <di th:if="${param.logout}}">You are desconected</di>
+                <label >Password</label>
+                <input  type="text" name="password" required>
+            </li>
+        </ul>
+        <button type="submit">login</button>
+
+</form>
+
+</body>
+</html>
