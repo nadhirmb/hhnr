@@ -19,6 +19,6 @@ public class Role extends Generic {
     private String role_name ;
 
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "role",fetch = FetchType.LAZY)
     private List<User> users;
 }

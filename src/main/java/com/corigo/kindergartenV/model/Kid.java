@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "kids")
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 //Class name always start with capital letter
 public class Kid extends Generic {
 
-    @Column(length = 255 )
+    @Column(length = 255)
     private String lastName ;
 
     @Column(length = 255)
@@ -28,4 +29,9 @@ public class Kid extends Generic {
     @Column
     private LocalDateTime birthday ;
 
+    @ManyToOne
+    private User user;
+
+    @ManyToMany
+    private List<CurrentActivity> currentActivityList;
 }
